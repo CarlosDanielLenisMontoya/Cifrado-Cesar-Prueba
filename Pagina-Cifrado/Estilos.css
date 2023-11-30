@@ -1,0 +1,89 @@
+body {
+    background-image: url('../Imagenes/CC.png');
+    
+    text-align: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    background-position: center; 
+    background-attachment: fixed; 
+   
+
+}
+
+.texto{
+    font-size:15px;
+    text-align: justify;
+}
+
+
+.navbar-brand{
+    font-size:25px;
+   
+    
+   
+}
+
+
+/* Estilo para los enlaces de la barra de navegación */
+.navbar-nav .nav-item {
+    margin-right: 5px; /* Espaciado entre los elementos de la barra de navegación */
+    
+}
+
+.navbar-nav .nav-link {
+    color: #000000;  /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 25px;
+    
+    
+}
+
+/* Cambio de color al pasar el ratón sobre el enlace */
+.navbar-nav .nav-link:hover {
+    background-color:#007bff; /* Nuevo color de fondo al pasar el ratón */
+    color: #fff;
+}
+
+/* Estilo para el botón de hamburguesa en dispositivos móviles */
+.navbar-toggler-icon {
+    background-color: #007bff; /* Color de fondo del botón de hamburguesa */
+}
+
+
+
+
+
+h1 {
+    color: #007bff; 
+}
+
+
+
+.form-control:hover{
+    text-align: center;
+    border: 1px solid #007bff; 
+    
+}
+
+#cesarForm {
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin-top: 50px; 
+    
+}
+
+
+
+
+
