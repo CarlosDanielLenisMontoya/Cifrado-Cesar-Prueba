@@ -17,7 +17,7 @@ body {
 
 /* Estilo para los enlaces de la barra de navegación */
 .navbar-nav .nav-item {
-    margin-right: 5px; /* Espaciado entre los elementos de la barra de navegación */
+    margin-right: 5px; 
 }
 
 .navbar-nav .nav-link {
@@ -30,13 +30,13 @@ body {
 
 /* Cambio de color al pasar el ratón sobre el enlace */
 .navbar-nav .nav-link:hover {
-    background-color:#ff00ff;  /* Nuevo color de fondo al pasar el ratón */
+    background-color:#ff00ff;  
     color: #fff;
 }
 
-/* Estilo para el botón de hamburguesa en dispositivos móviles */
+
 .navbar-toggler-icon {
-    background-color: #ff00ff;  /* Color de fondo del botón de hamburguesa */
+    background-color: #ff00ff;  
 }
 
 
