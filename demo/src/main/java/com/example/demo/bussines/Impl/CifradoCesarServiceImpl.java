@@ -17,7 +17,7 @@ public class CifradoCesarServiceImpl implements CifradoCesarService {
 
         for (int i = 0; i < texto.length(); i++) {
             char caracter = texto.charAt(i);
-
+            //Este if sirve para cuando el caracter no es una letra  (por ejemplo, es un número, símbolo o espacio en blanco)
             if (Character.isLetter(caracter)) {
                 char inicio = Character.isUpperCase(caracter) ? 'A' : 'a';
                 textoCodificado.append((char) ((caracter - inicio + desplazamiento) % 26 + inicio));
@@ -32,12 +32,12 @@ public class CifradoCesarServiceImpl implements CifradoCesarService {
     }
 
     @Override
-    public DescodificadoResponse descodificar(int desplazamiento ,String texto ) {
+    public DescodificadoResponse descodificar(int desplazamiento, String texto) {
         StringBuilder textoDescodificado = new StringBuilder();
 
         for (int i = 0; i < texto.length(); i++) {
             char caracter = texto.charAt(i);
-
+            //Este if sirve para cuando el caracter no es una letra  (por ejemplo, es un número, símbolo o espacio en blanco)
             if (Character.isLetter(caracter)) {
                 char inicio = Character.isUpperCase(caracter) ? 'A' : 'a';
                 textoDescodificado.append((char) ((caracter - inicio + 26 - desplazamiento) % 26 + inicio));
@@ -52,26 +52,48 @@ public class CifradoCesarServiceImpl implements CifradoCesarService {
     }
 
     @Override
-    public PistaResponse pista(String texto, String pista) {
+    public PistaResponse pistaTexto(String textoCifrado, String pista) {
         int desplazamiento = 0;
-        pista = pista.toUpperCase();
+        boolean encontrado = false;
 
-        for (int i = 0; i < pista.length(); i++) {
-            char caracter = pista.charAt(i);
+        do {
+            String textoDescifrado = descifrarCesar(textoCifrado, desplazamiento);
+
+            if (textoDescifrado.contains(pista)) {
+                encontrado = true;
+                return new PistaResponse(textoDescifrado, desplazamiento);
+            } else {
+                desplazamiento++;
+            }
+        } while (!encontrado);
+
+        // Este código nunca se ejecutará si se encuentra la pista
+        return null;
+
+
+
+    }
+    private String descifrarCesar(String textoCifrado, int desplazamiento) {
+        StringBuilder resultado = new StringBuilder();
+
+        for (int i = 0; i < textoCifrado.length(); i++) {
+            char caracter = textoCifrado.charAt(i);
 
             if (Character.isLetter(caracter)) {
-                char inicio = 'A';
-                desplazamiento = (caracter - inicio + 3) % 26; // Puedes ajustar el desplazamiento según la pista
-                break;
+                char descifrado = (char) ((caracter - desplazamiento - 'A' + 26) % 26 + 'A');
+                resultado.append(descifrado);
+            } else {
+                resultado.append(caracter);
             }
         }
 
-        return PistaResponse.builder()
-                .desplazamiento(desplazamiento)
-                .texto(texto)
-                .pista(pista)
-                .build();
+        return resultado.toString();
     }
-    }
+}
+
+
+
+
+
 
 

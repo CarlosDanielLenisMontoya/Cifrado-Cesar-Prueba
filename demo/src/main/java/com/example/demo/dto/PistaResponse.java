@@ -9,8 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 public class PistaResponse {
-    private String texto;
-    private String pista;
+    private String textoDescifrado;
     private int desplazamiento;
 
 }
