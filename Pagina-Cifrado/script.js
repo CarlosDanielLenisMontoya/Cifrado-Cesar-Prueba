@@ -27,6 +27,8 @@ async function cifrar() {
         if (response.ok) {
             const result = await response.json();
             console.log('Resultado:', result.textoCodificado);
+
+            // Actualizar el elemento de resultado en la página
             document.getElementById("resultado").textContent = result.textoCodificado; // Asumiendo que tu respuesta tiene una propiedad llamada 'textoCodificado'
         } else {
             console.error('Error:', response.status, response.statusText);
@@ -34,7 +36,7 @@ async function cifrar() {
     } catch (error) {
         console.error('Error durante la operación fetch:', error.message);
 
-        // Mostrar el mensaje de error en la página
-        document.getElementById("errorMensaje").textContent = error.message;
+        // Mostrar el mensaje de error como una alerta
+        alert(error.message); 
     }
 }

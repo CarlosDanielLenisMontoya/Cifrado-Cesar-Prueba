@@ -10,7 +10,7 @@
     <!-- Conectando tu CSS personalizado -->
     <link rel="stylesheet" href="pis.css">
 
-    <!-- Icono de la pagina web -->
+    <!-- Icono de la página web -->
     <link rel="icon" href="Imagenes/cifrado.png" type="image/png">
 
     <title>Cifrado De Cesar</title>
@@ -57,8 +57,8 @@
         <form id="cesarForm" class="mt-3">
             <h1 class="mt-5">Cifrado de César</h1>
             <h1>Pista</h1>
-            <label for="mensaje" class="mt-2">Texto (Codificado):</label>
-            <input type="text" id="mensajeOriginal" name="mensajeOriginal" class="form-control" required placeholder="Ingresa texto (Original)">
+            <label for="mensajeOriginal" class="mt-2">Texto (Codificado):</label>
+            <input type="text" id="mensajeOriginal" name="mensajeOriginal" class="form-control" required placeholder="Ingresa texto (Codificado)">
 
             <label for="pista">Pista:</label>
             <input type="text" id="pista" name="pista" class="form-control" required placeholder="Ingresar pista">
@@ -68,12 +68,13 @@
 
             <h2 class="mt-4">Resultado:</h2>
             <p id="resultado"></p>
-            <p id="errorMensaje" style="color: rgb(0, 0, 0);"></p>
-
+            <p id="error"></p>
         </form>
     </div>
 
     <!-- Conectando el JavaScript -->
     <script src="Pscript.js"></script>
+
+
 </body>
 </html>

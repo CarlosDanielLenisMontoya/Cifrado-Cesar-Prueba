@@ -1,40 +1,40 @@
-async function darPista() {
-    try {
-        // Obtener valores del formulario
-        const mensaje = document.getElementById("mensajeOriginal").value;
-        const pista = document.getElementById("pista").value;
+ // Función para dar pista
+ function darPista() {
+    // Obtener los valores de los campos de entrada
+    var mensajeOriginal = document.getElementById("mensajeOriginal").value;
+    var pista = document.getElementById("pista").value;
 
-        // Verificar si los campos están vacíos
-        if (mensaje.trim() === '' || pista.trim() === '') {
-            throw new Error('Por favor, complete ambos campos.');
-        }
-
-        // Preparar los datos para la solicitud POST
-        const data = new URLSearchParams();
-        data.append('textoCodificado', mensaje);
-        data.append('pista', pista);
-
-        // Hacer la solicitud fetch al servicio de cifrado
-        const response = await fetch('http://localhost:8080/cifrado-service/pista', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: data,
-        });
-
-        // Verificar si la solicitud fue exitosa (código de estado 200)
-        if (response.ok) {
-            const result = await response.json();
-            console.log('Resultado:', result.resultado);
-            document.getElementById("resultado").textContent = result.resultado; // Asumiendo que tu respuesta tiene una propiedad llamada 'resultado'
-        } else {
-            console.error('Error:', response.status, response.statusText);
-        }
-    } catch (error) {
-        console.error('Error durante la operación fetch:', error.message);
-
-        // Mostrar el mensaje de error en la página
-        document.getElementById("errorMensaje").textContent = error.message;
+    // Verificar si ambos campos están llenos
+    if (mensajeOriginal.trim() === '' || pista.trim() === '') {
+        // Mostrar una alerta si no están llenos
+        alert("Por favor, llene ambos campos para continuar.");
+        return;
     }
+
+    // Hacer la solicitud a la API usando fetch
+    fetch('http://localhost:8080/cifrado-service/pista', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'textoCifrado=' + encodeURIComponent(mensajeOriginal) + '&pista=' + encodeURIComponent(pista),
+    })
+    .then(response => response.json()) // Suponiendo que la respuesta está en formato JSON
+    .then(data => {
+        // Manejar los datos de la respuesta
+        console.log(data);
+
+        // Actualizar el elemento de resultado con los datos recibidos
+        var resultElement = document.getElementById("resultado");
+        resultElement.innerHTML = `
+            <p>Descodificación: ${data.textoDescifrado}</p>
+            <p>Desplazamiento: ${data.desplazamiento}</p>
+        `;
+    })
+    .catch(error => {
+        console.error('Error durante la operación fetch:', error.message);
+        console.error('Error:', error);
+
+      
+    });
 }

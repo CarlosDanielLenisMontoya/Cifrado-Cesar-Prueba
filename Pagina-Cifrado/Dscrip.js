@@ -35,10 +35,7 @@ async function descodificar() {
             console.error('Error:', response.status, response.statusText);
         }
     } catch (error) {
-        // Mostrar el mensaje de error en la página
-        document.getElementById("errorMensaje").textContent = error.message;
-        // Hacer visible la sección de mensajes de error
-        document.getElementById("errorSection").style.display = "block";
-        console.error('Error durante la operación fetch:', error);
+        console.error('Error durante la operación fetch:', error.message);
+        alert(error.message);
     }
 }
