@@ -8,8 +8,10 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Builder
-public class PistaResponse {
-    private String textoDescifrado;
-    private int desplazamiento;
+
+public class PeticionDescifrado {
+    private String textoCifrado;
+    private String pista;
+
 
 }

@@ -2,6 +2,8 @@ package com.example.demo.dto;
 
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -10,4 +12,7 @@ import lombok.*;
 @Builder
 public class DescodificadoResponse {
     private String textoDescodificado;
+
+
+
 }

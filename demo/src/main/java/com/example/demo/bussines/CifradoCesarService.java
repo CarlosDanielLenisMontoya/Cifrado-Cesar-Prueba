@@ -9,6 +9,9 @@ public interface CifradoCesarService {
     CodificarResponse codificar(String texto, int desplazamiento);
     DescodificadoResponse descodificar(int desplazamiento,String texto );
 
-    PistaResponse pista (String texto , String pista);
+     PistaResponse pistaTexto(String textoCodificado, String pista);
+
+
+
 
 }

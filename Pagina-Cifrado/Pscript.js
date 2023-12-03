@@ -1,20 +1,20 @@
 async function darPista() {
     try {
         // Obtener valores del formulario
-        const mensajeOriginal = document.getElementById("mensajeOriginal").value;
+        const mensaje = document.getElementById("mensajeOriginal").value;
         const pista = document.getElementById("pista").value;
 
         // Verificar si los campos están vacíos
-        if (mensajeOriginal.trim() === '' || pista.trim() === '') {
+        if (mensaje.trim() === '' || pista.trim() === '') {
             throw new Error('Por favor, complete ambos campos.');
         }
 
         // Preparar los datos para la solicitud POST
         const data = new URLSearchParams();
-        data.append('textoOriginal', mensajeOriginal);
+        data.append('textoCodificado', mensaje);
         data.append('pista', pista);
 
-        // Hacer la solicitud fetch al servicio de pista
+        // Hacer la solicitud fetch al servicio de cifrado
         const response = await fetch('http://localhost:8080/cifrado-service/pista', {
             method: 'POST',
             headers: {
@@ -26,10 +26,8 @@ async function darPista() {
         // Verificar si la solicitud fue exitosa (código de estado 200)
         if (response.ok) {
             const result = await response.json();
-
-            // Mostrar resultados en la página
-            document.getElementById("resultado").textContent = `Texto: ${result.texto}\nPista: ${result.pista}\nDesplazamiento: ${result.desplazamiento}`;
-            
+            console.log('Resultado:', result.resultado);
+            document.getElementById("resultado").textContent = result.resultado; // Asumiendo que tu respuesta tiene una propiedad llamada 'resultado'
         } else {
             console.error('Error:', response.status, response.statusText);
         }
