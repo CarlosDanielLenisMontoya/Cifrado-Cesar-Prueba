@@ -1,89 +1,70 @@
+/* Estilos para el cuerpo de la página */
 body {
-    background-image: url('../Imagenes/CC.png');
-    
-    text-align: center; 
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 50px;
-    background-position: center; 
-    background-attachment: fixed; 
-   
-
+    background-image: url('../Imagenes/CC.png'); /* Imagen de fondo */
+    text-align: center; /* Alineación del texto al centro */
+    background-size: cover; /* Ajuste de tamaño de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
+    padding-top: 50px; /* Espaciado superior */
+    background-position: center; /* Posición del fondo en el centro */
+    background-attachment: fixed; /* Fondo fijo durante el desplazamiento */
 }
 
-.texto{
-    font-size:15px;
-    text-align: justify;
+/* Estilos para el texto */
+.texto {
+    font-size: 15px; /* Tamaño del texto */
+    text-align: justify; /* Alineación justificada */
 }
 
-
-.navbar-brand{
-    font-size:25px;
-   
-    
-   
+/* Estilos para el logotipo de la barra de navegación */
+.navbar-brand {
+    font-size: 25px; /* Tamaño del texto del logotipo */
 }
 
-
-/* Estilo para los enlaces de la barra de navegación */
+/* Estilos para los enlaces de la barra de navegación */
 .navbar-nav .nav-item {
-    margin-right: 5px; 
-    
+    margin-right: 5px; /* Margen derecho entre elementos de navegación */
 }
 
 .navbar-nav .nav-link {
-    color: #000000;  /* Color del texto */
+    color: #000000; /* Color del texto del enlace */
     padding: 10px 15px; /* Espaciado interno del enlace */
     border-radius: 5px; /* Bordes redondeados */
-    font-size: 25px;
-    
-    
+    font-size: 25px; /* Tamaño del texto del enlace */
 }
 
 /* Cambio de color al pasar el ratón sobre el enlace */
 .navbar-nav .nav-link:hover {
-    background-color:#007bff; 
-    color: #fff;
+    background-color: #007bff; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto al pasar el ratón */
 }
 
-
+/* Estilos para el ícono del botón de hamburguesa */
 .navbar-toggler-icon {
-    background-color: #007bff; 
+    background-color: #007bff; /* Color del ícono del botón de hamburguesa */
 }
 
-
-
-
-
+/* Estilos para el título principal */
 h1 {
-    color: #007bff; 
+    color: #007bff; /* Color del texto del título */
 }
 
-
-
-.form-control:hover{
-    text-align: center;
-    border: 1px solid #007bff; 
-    
+/* Estilos para el formulario */
+.form-control:hover {
+    text-align: center; /* Alineación del texto en el formulario al pasar el ratón */
+    border: 1px solid #007bff; /* Borde al pasar el ratón */
 }
 
 #cesarForm {
-    max-width: 400px; 
-    margin: auto; 
-    padding: 20px;
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    background-color: #fff; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    margin-top: 50px; 
-    
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno del formulario */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 10px; /* Bordes redondeados del formulario */
+    background-color: #fff; /* Color de fondo del formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posicionamiento vertical al 50% */
+    left: 50%; /* Posicionamiento horizontal al 50% */
+    transform: translate(-50%, -50%); /* Centrar en la pantalla */
+    margin-top: 50px; /* Margen superior */
 }
-
-
-
-
-
